@@ -6,16 +6,19 @@ class RoleController extends Controller {
     super(props);
     this.createRule = {
       name: { type: 'string', required: true },
-      password: { type: 'string', required: true },
     };
   }
   async create() {
     const ctx = this.ctx;
     console.log('is a : ' + JSON.stringify(this.ctx.request.body));
+    //校验参数
     ctx.validate(this.createRule);
-
-    const result = await ctx.service.role.create(ctx.request.body);
-    ctx.helper.success(result);
+    //获取参数
+    const payload = ctx.request.body || {};
+    //存储数据库
+    const result = await ctx.service.role.create(payload);
+    //返回结果
+    ctx.helper.success({ctx, result});
   }
 }
 
