@@ -9,12 +9,18 @@
 // };
 
 
-exports.mongoose={
-  enable:true,
-  package:'egg-mongoose',
-}
+exports.mongoose = {
+  enable: true,
+  package: 'egg-mongoose',
+};
 
-exports.validate={
-  enable:true,
-  package:'egg-validate',
-}
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
+};
+
+exports.security = {
+  xframe: {
+    enable: false,
+  },
+};

@@ -18,6 +18,17 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1/test',
+      options: {},
+    },
+  };
+
+  config.security = {
+    csrf: false,
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
@@ -28,3 +39,4 @@ module.exports = appInfo => {
     ...userConfig,
   };
 };
+
