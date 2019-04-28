@@ -19,8 +19,3 @@ exports.validate = {
   package: 'egg-validate',
 };
 
-exports.security = {
-  xframe: {
-    enable: false,
-  },
-};
