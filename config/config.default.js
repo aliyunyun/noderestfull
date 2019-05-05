@@ -34,6 +34,20 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.passportLocal = {
+    usernameField: 'name',
+    passwordField: 'password',
+  };
+
+  config.auth_cookie_name = 'yy_token';
+
+
+  config.jwt = {
+    secret: 'aliyunyun',
+    enable: true, // default is false
+    match: '/jwt', // optional
+  };
+
   return {
     ...config,
     ...userConfig,
